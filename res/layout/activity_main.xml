@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin" 
+    tools:context=".MainActivity"
+    android:background="#ffbcd6dd">
+
+    <LinearLayout
+     android:id="@+id/lineartop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#3f51b5" >
+    
+     <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:text="考验颜值的时刻接招吧"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#fff"/>
+   </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="相册"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:id="@+id/id_getImage"/>
+     <Button
+        android:id="@+id/id_detect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="接招"
+        android:layout_toLeftOf="@+id/id_camera"
+        android:layout_marginRight="10dp"/>
+ 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拍照"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/id_getImage"
+        android:id="@+id/id_camera"/> 
+
+    <TextView
+        android:id="@+id/id_tip"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/id_detect"
+        android:layout_marginBottom="6dp"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+        android:paddingLeft="1dp"
+        android:textColor="#ffff0000"
+        android:layout_toLeftOf="@+id/id_detect" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:id="@+id/id_image"
+        android:layout_above="@+id/id_detect"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/lineartop"
+        android:src="@drawable/facephotos"/>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="true"
+        android:id="@+id/id_waiting">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/progressBar" />
+
+
+         <TextView
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_age_and_gender"
+            android:drawableLeft="@drawable/male"
+            android:text="12"
+            android:visibility="invisible"
+            android:paddingLeft="13dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/hint"
+            android:textColor="#ffff00ff"
+            android:textSize="22sp"
+            android:layout_gravity="center"/>
+        </FrameLayout>
+
+</RelativeLayout>
